@@ -1,0 +1,153 @@
+<!-- Banner start -->
+<div class="contain-fluid">
+  <div
+    id="carouselExampleDark"
+    class="carousel carousel-dark slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div
+        class="carousel-item active"
+        data-bs-interval="10000"
+        *ngFor="let banner of bannerResult; let i = index"
+        [ngClass]="{ active: i === 0 }"
+      >
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ banner.backdrop_path }}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h2>{{ banner.original_title }}</h2>
+          <p>{{ banner.overview }}</p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!-- Banner end -->
+
+<div class="contain mt-3 p-3">
+  <!-- Trending movies -->
+  <div class="row">
+    <h5 class="text-white">Phim nổi bật</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let trend of trendingResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ trend.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', trend.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Action movies -->
+  <div class="row mt-3">
+    <h5 class="text-white">Phim hành động</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let action of actionMovieResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ action.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', action.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Adventure movies -->
+  <div class="row mt-3">
+    <h5 class="text-white">Phim khám phá</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let adventure of adventureMovieResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ adventure.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', adventure.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Animation movies -->
+  <div class="row mt-3">
+    <h5 class="text-white">Phim hoạt hình</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let animation of animationMovieResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ animation.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', animation.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Comdy movies -->
+  <div class="row mt-3">
+    <h5 class="text-white">Phim hài</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let comedy of comedyMovieResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ comedy.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', comedy.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Sciencefiction movies -->
+  <div class="row mt-3">
+    <h5 class="text-white">Phim viễn tưởng</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let sci of sciencefictionMovieResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ sci.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', sci.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Thriller movies -->
+  <div class="row mt-3">
+    <h5 class="text-white">Phim kinh dị</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let thr of thrillerMovieResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ thr.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', thr.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+</div>

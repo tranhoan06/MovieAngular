@@ -1,0 +1,32 @@
+button {
+  background-color: #e50914;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #e50914;
+}
+
+.test {
+  transition: transform 450ms;
+  cursor: pointer;
+  width: 80%;
+  border-radius: 20;
+}
+
+.test:hover {
+  transform: scale(1.2);
+  background-color: #e50914;
+  z-index: 1;
+  border-radius: 20;
+  opacity: 0.8;
+}
+
+img {
+  width: 100%;
+}
+
+h5 {
+  color: #fff;
+}
